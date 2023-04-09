@@ -9,6 +9,5 @@ public class RotateObject : MonoBehaviour
     void Update()
     {
         transform.Rotate(x * _speed,y * _speed,z * _speed);
-        
     }
 }
