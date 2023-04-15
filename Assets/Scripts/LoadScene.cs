@@ -15,5 +15,11 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/SecondScene");
     }
+
+    public void OpenSceneThree()
+    {
+        SceneManager.LoadScene("Scenes/ThirdScene");
+    }
+    
     
 }
