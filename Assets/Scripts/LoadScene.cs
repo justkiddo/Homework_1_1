@@ -8,12 +8,12 @@ public class LoadScene : MonoBehaviour
     
     public void OpenSceneOne()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Scenes/FirstScene");
     }
     
     public void OpenSceneTwo()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Scenes/SecondScene");
     }
     
 }

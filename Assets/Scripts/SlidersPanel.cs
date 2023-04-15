@@ -25,13 +25,13 @@ public class SlidersPanel : MonoBehaviour
 
     private void OnSliderChangedX(float value)
     {
-        var rotation = value * 360;
+        var rotation = value * 20;
 
         cube.transform.Rotate(rotation,0,0);
     }
     private void OnSliderChangedY(float value)
     {
-        var rotation = value * 360;
+        var rotation = value * 20;
         cube.transform.Rotate(0,rotation,0);
 
     }
