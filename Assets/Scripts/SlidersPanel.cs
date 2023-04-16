@@ -7,7 +7,6 @@ public class SlidersPanel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textX;
     [SerializeField] private TextMeshProUGUI textY;
-    [SerializeField] private TextMeshProUGUI textScale;
     [SerializeField] private Slider sliderX;
     [SerializeField] private Slider sliderY;
     [SerializeField] private Slider sliderScale;

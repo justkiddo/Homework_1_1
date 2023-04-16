@@ -20,6 +20,19 @@ public class LoadScene : MonoBehaviour
     {
         SceneManager.LoadScene("Scenes/ThirdScene");
     }
+
+    public void OpenSceneFour()
+    {
+        SceneManager.LoadScene("Scenes/FourthScene");
+    }
     
+    public void OpenSceneFive()
+    {
+        SceneManager.LoadScene("Scenes/FifthScene");
+    }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     
 }

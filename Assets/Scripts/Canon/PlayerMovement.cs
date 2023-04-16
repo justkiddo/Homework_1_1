@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Range = UnityEngine.SocialPlatforms.Range;
+using Slider = UnityEngine.UI.Slider;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerMovement : MonoBehaviour
@@ -14,15 +11,20 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementSpeed = 5;
     [Range(5,100)]
     [SerializeField] private float rotateSpeed = 5;
-    [Range(5000f,10000f)]
-    [SerializeField] private float bulletSpeed = 5000f;
-    
+    [Range(1000f,10000f)]
+    [SerializeField] private float bulletSpeed = 1000f;
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private Slider shootingAngleSlider;
     
     private void OnValidate()
     {
         rb = GetComponent<Rigidbody>();
+    }
+
+    private void Awake()
+    {
+        shootingAngleSlider.onValueChanged.AddListener(onShottingAngleChange);
     }
 
     void Update()
@@ -38,4 +40,11 @@ public class PlayerMovement : MonoBehaviour
             _bullet.GetComponent<Rigidbody>().AddForce(-transform.forward * bulletSpeed, ForceMode.Force);
         }
     }
+
+    private void onShottingAngleChange(float value)
+    {
+        var scaling = value * 2;
+        rb.transform.Rotate(scaling,0,0);
+    }
+    
 }
