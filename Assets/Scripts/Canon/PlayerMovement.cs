@@ -43,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
         {
             stoppedShooting = Time.time;
             var bulletPower = bulletSpeed * (stoppedShooting - startShooting);
-            Debug.Log(startShooting + "  " + stoppedShooting);
             if (!(bulletPower < 10000f)) return;
             GameObject _bullet = Instantiate(bullet, shootPoint.position, Quaternion.identity);
             _bullet.GetComponent<Rigidbody>().AddForce(-transform.forward * bulletPower, ForceMode.Force);
@@ -54,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void onShottingAngleChange(float value)
     {
-        var scaling = value * 2;
+        var scaling = value * 1.01f;
         rb.transform.Rotate(scaling,0,0);
     }
 
