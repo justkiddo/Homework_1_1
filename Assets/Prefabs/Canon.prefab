@@ -588,7 +588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3727531919987796135}
   m_LocalRotation: {x: 0, y: 0.9990971, z: -0.04248598, w: 0}
-  m_LocalPosition: {x: -0, y: 2.89, z: 4.24}
+  m_LocalPosition: {x: 0, y: 2.89, z: 4.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1124,10 +1124,11 @@ MonoBehaviour:
   rb: {fileID: 3727531920722361421}
   movementSpeed: 5
   rotateSpeed: 5
-  bulletSpeed: 1000
   shootPoint: {fileID: 3727531921192750564}
   bullet: {fileID: 1435192661768582100, guid: dd8772d43a54e3a4e96df38f1031b2fb, type: 3}
   shootingAngleSlider: {fileID: 3727531920796877060}
+  maxCanonPower: 10000
+  bulletSpeed: 1000
 --- !u!1 &3727531920796877058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -34.479996, y: -1.17}
+  m_AnchoredPosition: {x: -34.47998, y: -1.17}
   m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3727531920796877060

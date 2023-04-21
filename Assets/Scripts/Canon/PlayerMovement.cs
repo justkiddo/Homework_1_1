@@ -9,13 +9,15 @@ public class PlayerMovement : MonoBehaviour
     
     [Range(5,100)]
     [SerializeField] private float movementSpeed = 5;
-    [Range(5,100)]
+    [Range(1,20)]
     [SerializeField] private float rotateSpeed = 5;
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GameObject bullet;
-    [SerializeField] private Slider shootingAngleSlider; 
+    [SerializeField] private Slider shootingAngleSlider;
+    [SerializeField] private float maxCanonPower = 10000f;
+    [SerializeField] private float bulletSpeed = 1000f;
     private float startShooting, stoppedShooting;
-    private float bulletSpeed = 1000f;
+    
     private void OnValidate()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         {
             stoppedShooting = Time.time;
             var bulletPower = bulletSpeed * (stoppedShooting - startShooting);
-            if (!(bulletPower < 10000f)) return;
+            if (!(bulletPower < maxCanonPower)) return;
             GameObject _bullet = Instantiate(bullet, shootPoint.position, Quaternion.identity);
             _bullet.GetComponent<Rigidbody>().AddForce(-transform.forward * bulletPower, ForceMode.Force);
         }
