@@ -8,27 +8,27 @@ public class LoadScene : MonoBehaviour
     
     public void OpenSceneOne()
     {
-        SceneManager.LoadScene("Scenes/FirstScene");
+        SceneManager.LoadScene("Scenes/HomeworkScenes/FirstScene");
     }
     
     public void OpenSceneTwo()
     {
-        SceneManager.LoadScene("Scenes/SecondScene");
+        SceneManager.LoadScene("Scenes/HomeworkScenes/SecondScene");
     }
 
     public void OpenSceneThree()
     {
-        SceneManager.LoadScene("Scenes/ThirdScene");
+        SceneManager.LoadScene("Scenes/HomeworkScenes/ThirdScene");
     }
 
     public void OpenSceneFour()
     {
-        SceneManager.LoadScene("Scenes/FourthScene");
+        SceneManager.LoadScene("Scenes/HomeworkScenes/FourthScene");
     }
     
     public void OpenSceneFive()
     {
-        SceneManager.LoadScene("Scenes/FifthScene");
+        SceneManager.LoadScene("Scenes/HomeworkScenes/FifthScene");
     }
     public void RestartLevel()
     {

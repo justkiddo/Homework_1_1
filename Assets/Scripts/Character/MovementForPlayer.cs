@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MovementForPlayer : MonoBehaviour
 {
-    [SerializeField] private Rigidbody _rb;
+    [SerializeField, HideInInspector] private Rigidbody _rb;
     [SerializeField] private Animator _animator;
     private float movementSpeed = 2f;
     private float rotateSpeed = 1f;
