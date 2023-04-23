@@ -7,11 +7,10 @@ using UnityEngine.UI;
 
 public class TriggerChanger : MonoBehaviour
 {
-    [SerializeField] private GameObject shootingTarget;
+    
     [SerializeField] private TextMeshProUGUI targetCountInfo;
     [SerializeField] private Button levelClearedButton;
     [SerializeField] private Button restartLevelButton;
-    [SerializeField] private GameObject target;
     private List<GameObject> _targets;
     private int _targetsCount;
 
@@ -32,7 +31,7 @@ public class TriggerChanger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if ("Target (UnityEngine.GameObject)" == other.gameObject.ToString())
+        if (other.gameObject.CompareTag("Targets")) 
         {
             --_targetsCount;
             if (_targetsCount == 0)
