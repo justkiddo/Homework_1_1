@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HomeworkScenes/FifthScene.unity
     guid: 69fb3bfcbf1f54a46965696f0e75f424
+  - enabled: 1
+    path: Assets/Scenes/TerrainScenes/MainMenuScene.unity
+    guid: 470bb7437fd83134593f4b8b3b799f29
+  - enabled: 1
+    path: Assets/Scenes/TerrainScenes/TerrainScene.unity
+    guid: 2325094b41ab4a94092c96bd0f4ac029
   m_configObjects: {}

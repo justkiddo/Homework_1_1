@@ -26,9 +26,8 @@ public class MovementForPlayer : MonoBehaviour
     {
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
-
-      
         var jump = Input.GetAxis("Jump");
+        
         RotateCharacter(horizontal);
         Moving(horizontal, vertical, jump);
     }
@@ -40,11 +39,11 @@ public class MovementForPlayer : MonoBehaviour
 
     private void Moving(float horizontal, float vertical, float jump)
     {
-        var runMultiplicator =  (Input.GetKey(KeyCode.LeftShift)) ? 2 : 1;
+        var runMultiplication =  (Input.GetKey(KeyCode.LeftShift)) ? 2 : 1;
   
 
         var dir = new Vector3(horizontal, 0, vertical);
-        var speed = runMultiplicator * moveSpeed;
+        var speed = runMultiplication * moveSpeed;
        
         var moveVector = transform.TransformDirection(dir) * speed;
         
@@ -66,4 +65,5 @@ public class MovementForPlayer : MonoBehaviour
         _velocity.y += -9.81f * Time.deltaTime;
         _movement.Move((moveVector + _velocity) * Time.deltaTime);
     }
+    
 }
