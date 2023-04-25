@@ -14,5 +14,10 @@ public class CharacterLoadScenes : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("Scenes/TerrainScenes/TerrainScene");
     }
+    public void RestartLevel()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
     
 }
