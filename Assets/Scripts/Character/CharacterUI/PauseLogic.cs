@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -9,6 +6,7 @@ public class PauseLogic : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _continueButton;
+    [SerializeField] private Animator animator;
     
     private void Awake()
     {
@@ -26,7 +24,7 @@ public class PauseLogic : MonoBehaviour
 
 
     
-    private void Pause()
+    public void Pause()
     {
         panel.SetActive(true);
         Time.timeScale = 0f;

@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -15,6 +12,7 @@ public class MovementForPlayer : MonoBehaviour
     private static readonly int IsWalking = Animator.StringToHash("IsWalking");
     private static readonly int IsJumping = Animator.StringToHash("IsJumping");
     private static readonly int Movespeed = Animator.StringToHash("Movespeed");
+    private static readonly int Punch = Animator.StringToHash("Punch");
 
 
     private void OnValidate()
@@ -27,6 +25,12 @@ public class MovementForPlayer : MonoBehaviour
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
         var jump = Input.GetAxis("Jump");
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            animator.SetTrigger(Punch);
+        }
+        
         
         RotateCharacter(horizontal);
         Moving(horizontal, vertical, jump);
