@@ -24,6 +24,7 @@ public class MovementForPlayer : MonoBehaviour
     {
         var horizontal = Input.GetAxis("Horizontal");
         var vertical = Input.GetAxis("Vertical");
+        var mouseX = Input.GetAxis("Mouse X");
         var jump = Input.GetAxis("Jump");
 
         if (Input.GetMouseButtonDown(0))
