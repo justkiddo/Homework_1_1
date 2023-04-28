@@ -5,16 +5,16 @@ public class CharacterLoadScenes : MonoBehaviour
 {
     
     
-    public void OpenMainMenu()
+    public static void OpenMainMenu()
     {
         SceneManager.LoadScene("Scenes/TerrainScenes/MainMenuScene");
     }
-    public void StartGame()
+    public static void StartGame()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Scenes/TerrainScenes/TerrainScene");
     }
-    public void RestartLevel()
+    public static void RestartLevel()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
