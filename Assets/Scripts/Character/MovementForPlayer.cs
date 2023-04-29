@@ -39,7 +39,8 @@ public class MovementForPlayer : MonoBehaviour
 
     private void RotateCharacter(float rotate)   
     {
-        transform.Rotate(Vector3.up, rotate);
+       // transform.Rotate(Vector3.up, rotate);
+        transform.Rotate(0, rotate, 0 );
     }
 
     private void Moving(float horizontal, float vertical, float jump)
