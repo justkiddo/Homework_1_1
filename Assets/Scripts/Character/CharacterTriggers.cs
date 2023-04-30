@@ -9,7 +9,6 @@ public class CharacterTriggers : MonoBehaviour
     [SerializeField] private MovementForPlayer _movementForPlayer;
     [SerializeField] private GameObject deathCam;
     [SerializeField] private GameObject mainCam;
-    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject pausePanelPrefab;
     [SerializeField] private Transform pausePanelPosition;
     [SerializeField] private Button exitButton;
