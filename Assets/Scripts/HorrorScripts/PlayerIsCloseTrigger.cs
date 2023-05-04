@@ -7,12 +7,16 @@ public class PlayerIsCloseTrigger : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private AudioSource scream;
+    [SerializeField] private AudioSource help;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             _animator.SetBool("PlayerIsNear", true);
             rb.useGravity = true;
+            help.Stop();
+            scream.Play();
         }
     }
 }

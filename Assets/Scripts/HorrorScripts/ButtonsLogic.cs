@@ -8,6 +8,7 @@ public class ButtonsLogic : MonoBehaviour
     [SerializeField] private Button continueButton;
     [SerializeField] private Button mainMenuExitButton;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private FirstPersonMovement fpm;
     private bool _paused;
     private GameObject _newPausePanel;
     
@@ -24,9 +25,11 @@ public class ButtonsLogic : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && _paused == false)
         {
             Pause();
+           
         } else if (Input.GetKeyDown(KeyCode.Escape) && _paused)
         {
             Unpause();
+           
         }
         
     }
@@ -37,7 +40,7 @@ public class ButtonsLogic : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;
-
+        fpm.enabled = false;
     }
 
     public void Unpause()
@@ -46,6 +49,7 @@ public class ButtonsLogic : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        fpm.enabled = true;
     }
     
     
