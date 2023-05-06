@@ -9,6 +9,7 @@ public class PlayerIsCloseTrigger : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private AudioSource scream;
     [SerializeField] private AudioSource help;
+    [SerializeField] private GameObject hint;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -17,6 +18,7 @@ public class PlayerIsCloseTrigger : MonoBehaviour
             rb.useGravity = true;
             help.Stop();
             scream.Play();
+            hint.SetActive(true);
         }
     }
 }
