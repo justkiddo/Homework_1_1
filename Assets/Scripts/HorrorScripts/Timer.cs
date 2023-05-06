@@ -12,15 +12,12 @@ public class Timer : MonoBehaviour
     private float _timeLeft = 0f;
     private bool _timerOn = false;
     private float _timeFromStart;
-    
-    private void Start()
-    {
-        _timeLeft = _timeFromStart;
-       
-    }
+    private bool _alreadyEntered = false;
+
  
     private void Update()
     {
+        _timeFromStart = Time.time;
         if (_timerOn)
         {
             if (_timeLeft > 0)
@@ -48,9 +45,10 @@ public class Timer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && _alreadyEntered == false)
         {
             _timerOn = true;
+            _alreadyEntered = true;
             _timeLeft = _timeFromStart;
         }
     }
