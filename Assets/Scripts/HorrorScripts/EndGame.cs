@@ -9,6 +9,7 @@ public class EndGame : MonoBehaviour
     [SerializeField] private Timer timer;
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private GameObject winCanvas;
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -16,6 +17,7 @@ public class EndGame : MonoBehaviour
             winCanvas.SetActive(true);
             timer.enabled = false;
             timerText.enabled = false;
+            Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
