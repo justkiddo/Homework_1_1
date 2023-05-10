@@ -11,7 +11,7 @@ public class FirstPersonMovement : MonoBehaviour
     [SerializeField] private new GameObject light;
     [SerializeField] private float moveSpeed = 2f;
     [SerializeField] private float jumpForce = 6f;
-    [SerializeField] private Animator _animator;
+    [SerializeField] private Animator animator;
     [Range(0.1f, 1 )]
     [SerializeField] private float rotateSpeed = 0.4f;
     private Vector3 _velocity = Vector3.zero;
@@ -20,7 +20,11 @@ public class FirstPersonMovement : MonoBehaviour
     private float _xRotation = 0.0f;
     private float _yRotation = 0.0f;
     private Camera _cam;
-
+    private static readonly int IsJumping = Animator.StringToHash("IsJumping");
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+    private static readonly int Movespeed = Animator.StringToHash("Movespeed");
+    
+    
     void Start()
     {
         _cam = Camera.main;
@@ -92,10 +96,11 @@ public class FirstPersonMovement : MonoBehaviour
         var speed = runMultiplication * moveSpeed;
         
         var moveVector = transform.TransformDirection(dir) * speed;
-
+        animator.SetBool(IsJumping, jump != 0);
+        animator.SetBool(IsWalking, horizontal != 0 || vertical !=0);
+        animator.SetFloat(Movespeed, speed / (moveSpeed * 2 ));
         if (_movement.isGrounded)
         {
-            
             if(_velocity.y < 0)
             {
                 _velocity.y = 0f;
@@ -103,7 +108,7 @@ public class FirstPersonMovement : MonoBehaviour
             }
             if (jump != 0 )
             {
-                _animator.SetBool("Jump", true);
+                
                 jumpSound.Play();
                 _velocity.y += jumpForce;
             }
